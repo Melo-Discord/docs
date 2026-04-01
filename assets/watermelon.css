@@ -1,0 +1,493 @@
+/* ==========================================================================
+  Watermelon Theme — Melo Discord Documentation
+  Primary: Watermelon green  (#3d8c40)
+  Accent:  Watermelon pink   (#e8445a)
+  ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Colour tokens
+   -------------------------------------------------------------------------- */
+:root {
+  --watermelon-green:       #44b37b;
+  --watermelon-green-dark:  #2a6b2d;
+  --watermelon-green-light: #60b865;
+  --watermelon-pink:        #e8425a;
+  --watermelon-pink-dark:   #c02e44;
+  --watermelon-pink-light:  #ff7a8a;
+  --watermelon-seed:        #1c1c1e;
+  --watermelon-rind:        #d4edda;
+  --watermelon-surface-dark: #12171f;
+  --watermelon-border-dark: #263044;
+
+  --md-text-font: "Segoe UI Variable Text", "Segoe UI", "Avenir Next", "Helvetica Neue", "Noto Sans", sans-serif;
+  --melo-display-font: "Segoe UI Variable Display", "Segoe UI", "Avenir Next", "Helvetica Neue", sans-serif;
+  --md-code-font: "Cascadia Code", Consolas, monospace;
+}
+
+/* --------------------------------------------------------------------------
+   Light scheme
+   -------------------------------------------------------------------------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:              var(--watermelon-green);
+  --md-primary-fg-color--light:       var(--watermelon-green-light);
+  --md-primary-fg-color--dark:        var(--watermelon-green-dark);
+  --md-primary-bg-color:              #ffffff;
+  --md-default-bg-color:              #f7fbf8;
+  --md-accent-fg-color:               var(--watermelon-pink);
+  --md-accent-fg-color--transparent:  rgba(232, 68, 90, 0.1);
+
+  /* Typeset links */
+  --md-typeset-a-color:               var(--watermelon-green);
+
+  --watermelon-surface: rgba(255, 255, 255, 0.92);
+  --watermelon-border: rgba(61, 140, 64, 0.18);
+  --watermelon-page-bg: #f7fbf8;
+}
+
+/* --------------------------------------------------------------------------
+   Dark (slate) scheme
+   -------------------------------------------------------------------------- */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:              var(--watermelon-green-light);
+  --md-primary-fg-color--light:       var(--watermelon-green-light);
+  --md-primary-fg-color--dark:        var(--watermelon-green-dark);
+  --md-primary-bg-color:              #ffffff;
+  --md-accent-fg-color:               var(--watermelon-pink-light);
+  --md-accent-fg-color--transparent:  rgba(255, 122, 138, 0.1);
+  --md-default-bg-color:              #0f1411;
+  --md-default-fg-color:              #e8edf6;
+  --md-default-fg-color--light:       #c4cfde;
+
+  --md-typeset-a-color:               var(--watermelon-green-light);
+
+  --watermelon-surface: rgba(255, 255, 255, 0.04);
+  --watermelon-border: rgba(255, 255, 255, 0.14);
+  --watermelon-page-bg: #0f1411;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--watermelon-page-bg);
+}
+
+body[data-md-color-scheme="slate"] {
+  background: var(--watermelon-page-bg);
+}
+
+body[data-md-color-scheme="slate"] .md-main,
+body[data-md-color-scheme="slate"] .md-main__inner,
+body[data-md-color-scheme="slate"] .md-content {
+  background: transparent;
+}
+
+.md-main,
+.md-main__inner,
+.md-content,
+.md-sidebar,
+.md-sidebar__scrollwrap,
+.md-sidebar__inner,
+.md-sidebar--primary,
+.md-sidebar--secondary,
+.md-nav,
+.md-nav__title {
+  background: transparent !important;
+}
+
+.md-sidebar .md-nav__source,
+.md-sidebar .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link,
+.md-sidebar .md-nav--secondary .md-nav__title {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.md-main__inner {
+  padding-top: 1rem;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: var(--melo-display-font);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.md-typeset h1 {
+  font-weight: 780;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  margin-top: 2rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid var(--watermelon-border);
+}
+
+.md-typeset h3 {
+  font-weight: 680;
+}
+
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset th {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(22, 32, 22, 0.06);
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.55rem 0.75rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: rgba(61, 140, 64, 0.1);
+}
+
+.md-typeset code {
+  border-radius: 6px;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 14px;
+  overflow: hidden;
+  border-width: 1px;
+  box-shadow: 0 12px 30px rgba(22, 32, 22, 0.06);
+  font-size: 0.88rem;
+}
+
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+  margin: 0;
+  font-size: 0.82rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Header / navigation
+   -------------------------------------------------------------------------- */
+.md-header {
+  background: rgba(18, 23, 31, 0.9);
+  border-bottom: 1px solid var(--watermelon-border-dark);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.md-tabs {
+  background-color: #1a2130;
+  border-bottom: 1px solid var(--watermelon-border-dark);
+}
+
+.md-tabs__link {
+  font-weight: 700;
+}
+
+.md-logo__emoji {
+  display: inline-block;
+  font-size: 1.05rem;
+  line-height: 1;
+  transform: translateY(-0.01rem);
+}
+
+/* --------------------------------------------------------------------------
+   Accent buttons & interactive elements
+   -------------------------------------------------------------------------- */
+.md-search__form:focus-within {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Active navigation items */
+.md-nav__link--active,
+.md-nav__link:hover {
+  color: var(--watermelon-pink);
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+  color: var(--watermelon-pink-light);
+}
+
+/* --------------------------------------------------------------------------
+   Watermelon hero banner on the home page
+   -------------------------------------------------------------------------- */
+.watermelon-hero {
+  background: var(--watermelon-surface);
+  border-radius: 14px;
+  padding: 1.35rem 1.15rem;
+  color: inherit;
+  margin-bottom: 1.4rem;
+  border: 1px solid var(--watermelon-border);
+  box-shadow: 0 8px 18px rgba(22, 32, 22, 0.05);
+}
+
+.watermelon-hero::after {
+  content: none;
+}
+
+.watermelon-hero h1 {
+  font-size: clamp(1.45rem, 2.35vw, 2.1rem);
+  font-weight: 760;
+  margin: 0 0 0.5rem;
+  color: inherit !important;
+  border: none;
+  max-width: 24ch;
+}
+
+.watermelon-hero p {
+  font-size: 0.95rem;
+  opacity: 0.86;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: flex-start;
+  margin-top: 0.95rem;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.24rem 0.6rem;
+  margin-bottom: 0.7rem;
+  border-radius: 999px;
+  background: rgba(232, 66, 90, 0.1);
+  border: 1px solid var(--watermelon-border);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-md-color-scheme="slate"] .hero-kicker {
+  background: rgba(96, 184, 101, 0.12);
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.stat-chip {
+  background: var(--watermelon-surface);
+  border: 1px solid var(--watermelon-border);
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+  box-shadow: 0 8px 16px rgba(22, 32, 22, 0.045);
+}
+
+.stat-chip strong {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  margin-bottom: 0.2rem;
+  color: var(--watermelon-green);
+}
+
+[data-md-color-scheme="slate"] .stat-chip strong {
+  color: var(--watermelon-green-light);
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.section-card {
+  background: var(--watermelon-surface);
+  border: 1px solid var(--watermelon-border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(22, 32, 22, 0.045);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(22, 32, 22, 0.09);
+}
+
+.section-card h3,
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.section-card p,
+.feature-card p {
+  margin-bottom: 0;
+}
+
+.section-card .card-icon,
+.feature-card .card-icon {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.65rem;
+  background: rgba(61, 140, 64, 0.14);
+  margin-bottom: 0.65rem;
+  font-size: 1.05rem;
+}
+
+.command-table tbody tr:nth-child(odd) {
+  background: rgba(61, 140, 64, 0.03);
+}
+
+.command-table td:first-child,
+.command-table th:first-child {
+  width: 20%;
+}
+
+.command-table td:last-child,
+.command-table th:last-child {
+  width: 24%;
+}
+
+.command-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.65rem;
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
+  border-radius: 999px;
+  border: 1px solid var(--watermelon-border);
+  background: rgba(61, 140, 64, 0.08);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.support-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.support-stack .md-button {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Feature cards (used on the home page)
+   -------------------------------------------------------------------------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.feature-card {
+  background: var(--watermelon-surface);
+  border: 1px solid var(--watermelon-border);
+  border-radius: 12px;
+  padding: 1.05rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 18px 32px rgba(61, 140, 64, 0.14);
+  transform: translateY(-3px);
+  border-color: rgba(61, 140, 64, 0.28);
+}
+
+.feature-card h3 {
+  color: var(--watermelon-green);
+  margin-top: 0;
+}
+
+[data-md-color-scheme="slate"] .feature-card h3 {
+  color: var(--watermelon-green-light);
+}
+
+.feature-card .card-icon {
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.md-typeset .md-button {
+  border-radius: 10px;
+  padding-inline: 0.75rem;
+  padding-block: 0.35rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.md-typeset .md-button--primary {
+  background: var(--watermelon-green);
+  border-color: transparent;
+}
+
+.md-typeset .md-button--primary:hover {
+  background: var(--watermelon-green-dark);
+}
+
+.md-content__inner > :first-child {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Admonition colour overrides
+   -------------------------------------------------------------------------- */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--watermelon-green);
+}
+
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(61, 140, 64, 0.12);
+}
+
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: var(--watermelon-green);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.md-footer {
+  background-color: var(--watermelon-green-dark);
+}
+
+.md-footer-meta {
+  background-color: var(--watermelon-seed);
+}
+
+.md-footer a {
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Scrollbar (Chromium)
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar-thumb {
+  background: var(--watermelon-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--watermelon-pink);
+}
