@@ -1,0 +1,121 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: Melo Documentation
+site_url: https://docs.melobot.fun
+site_description: Public documentation for the Melo Discord bot.
+site_author: Melo Discord
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  font: false
+  favicon: assets/melo-favicon.png
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  icon:
+    repo: fontawesome/brands/github
+
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.path
+    - content.tooltips
+    - content.tabs.link
+    - content.footnote.tooltips
+    - toc.follow
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - header.autohide
+    - content.code.copy
+    - navigation.footer
+
+extra_css:
+  - assets/watermelon.css
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Melo-Discord/docs
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/QwVTNzHSDY
+
+copyright: >
+  Copyright &copy; 2026 Melo &mdash; Made with 🍉
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - footnotes
+
+repo_url: https://github.com/Melo-Discord/docs
+repo_name: Melo-Discord/docs
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Command Reference:
+      - Overview: commands/index.md
+      - Channels: commands/channels.md
+      - Community: commands/community.md
+      - Config: commands/config.md
+      - Economy: commands/economy.md
+      - Fun: commands/fun.md
+      - Logging: commands/logging.md
+      - Moderation: commands/moderation.md
+      - Roles: commands/roles.md
+      - Utility: commands/utility.md
+  - Guides:
+      - Permissions: guides/permissions.md
+      - Troubleshooting: guides/troubleshooting.md
